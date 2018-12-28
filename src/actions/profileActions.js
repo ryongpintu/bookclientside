@@ -11,7 +11,7 @@ import {
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get("http://localhost:8000/books")
+    .get("https://bookishappapi.herokuapp.com/books")
     .then(res =>
       dispatch({
         type: GET_BOOK,
@@ -29,7 +29,7 @@ export const getCurrentProfile = () => dispatch => {
 export const updateBook = (id, profileData, history) => dispatch => {
   console.log(profileData);
   axios
-    .put(`http://localhost:8000/books/edit/${id}`, profileData)
+    .put(`https://bookishappapi.herokuapp.com/books/edit/${id}`, profileData)
     .then(res => history.push("/dashboard"))
     .catch(err =>
       dispatch({
@@ -40,7 +40,7 @@ export const updateBook = (id, profileData, history) => dispatch => {
 };
 export const getCurrentBook = id => dispatch => {
   axios
-    .get(`http://localhost:8000/books/${id}`)
+    .get(`https://bookishappapi.herokuapp.com/books/${id}`)
     .then(res => {
       console.log(res.data);
       dispatch({
@@ -58,7 +58,7 @@ export const getCurrentBook = id => dispatch => {
 
 export const addBook = (expData, history) => dispatch => {
   axios
-    .post("http://localhost:8000/books/add", expData)
+    .post("https://bookishappapi.herokuapp.com/books/add", expData)
     .then(res => history.push("/dashboard"))
     .catch(err =>
       dispatch({
@@ -70,7 +70,7 @@ export const addBook = (expData, history) => dispatch => {
 
 export const deleteBook = id => dispatch => {
   axios
-    .delete(`http://localhost:8000/books/delete/${id}`)
+    .delete(`https://bookishappapi.herokuapp.com/books/delete/${id}`)
     .then(res =>
       dispatch({
         type: GET_BOOK,
@@ -89,7 +89,7 @@ export const getBooks = () => dispatch => {
   dispatch(setProfileLoading());
 
   axios
-    .get("http://localhost:8000/books/")
+    .get("https://bookishappapi.herokuapp.com/books")
     .then(res => {
       console.log(res.data);
       dispatch({
