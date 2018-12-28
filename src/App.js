@@ -16,10 +16,10 @@ import "./App.css";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
-import AddExperience from "./components/add-credentials/AddExperience";
-import Profiles from "./components/profiles/Profiles";
+
 import EditBook from "./components/edit-book/EditBook";
 import ShowBooks from "./components/bookhome/ShowBooks";
+import AddBook from "./components/add-credentials/AddBook";
 
 // check for token
 if (localStorage.getItem("x-auth-token")) {
@@ -50,11 +50,7 @@ class App extends Component {
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
               <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-book"
-                  component={AddExperience}
-                />
+                <PrivateRoute exact path="/add-book" component={AddBook} />
               </Switch>
               <Switch>
                 <PrivateRoute

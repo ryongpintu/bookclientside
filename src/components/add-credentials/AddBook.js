@@ -4,9 +4,9 @@ import TextFieldGroup from "../common/TextFieldGroup.js";
 // import TextAreaFieldGroup from "../common/TextAreaFieldGroup.js";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addExperience } from "../../actions/profileActions.js";
+import { addBook } from "../../actions/profileActions.js";
 
-class AddExperience extends Component {
+class AddBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ class AddExperience extends Component {
       ISBN: this.state.ISBN
     };
 
-    this.props.addExperience(expData, this.props.history);
+    this.props.addBook(expData, this.props.history);
   }
 
   onChange(e) {
@@ -59,7 +59,6 @@ class AddExperience extends Component {
               <p className="lead text-center">
                 Add any book that you have read in the past or current
               </p>
-              <small className="d-block pb-3">* = required fields</small>
 
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -88,6 +87,7 @@ class AddExperience extends Component {
 
                 <TextFieldGroup
                   name="ISBN"
+                  placeholder="ISBN"
                   type="text"
                   value={this.state.ISBN}
                   onChange={this.onChange}
@@ -108,8 +108,8 @@ class AddExperience extends Component {
   }
 }
 
-AddExperience.propTyes = {
-  addExperience: PropTypes.func.isRequired
+AddBook.propTyes = {
+  addBook: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -118,5 +118,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addExperience }
-)(withRouter(AddExperience));
+  { addBook }
+)(withRouter(AddBook));

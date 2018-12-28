@@ -2,15 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getProfiles, deleteAccount } from "../../actions/profileActions.js";
+import { getBooks } from "../../actions/profileActions.js";
 import Spinner from "../common/Spinner.js";
-// import ProfileActions from "./ProfileActions.js";
-// import Experience from "./Experience.js";
 import BookItem from "./BookItem";
 
 class ShowBooks extends Component {
   componentDidMount() {
-    this.props.getProfiles();
+    this.props.getBooks();
   }
 
   render() {
@@ -56,17 +54,17 @@ class ShowBooks extends Component {
 }
 
 ShowBooks.propTypes = {
-  getProfiles: PropTypes.func.isRequired,
+  getBooks: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile,
+  profile: state.book,
   auth: state.auth
 });
 
 export default connect(
   mapStateToProps,
-  { getProfiles }
+  { getBooks }
 )(ShowBooks);

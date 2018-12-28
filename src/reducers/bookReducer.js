@@ -1,7 +1,7 @@
 import {
-  GET_PROFILE,
-  GET_PROFILES,
-  PROFILE_LOADING,
+  GET_BOOK,
+  GET_BOOKS,
+  BOOK_LOADING,
   CLEAR_CURRENT_PROFILE
 } from "../actions/types.js";
 
@@ -13,20 +13,20 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case PROFILE_LOADING:
+    case BOOK_LOADING:
       return {
         ...state,
         loading: true
       };
 
-    case GET_PROFILE:
+    case GET_BOOK:
       return {
         ...state,
         profile: action.payload,
         loading: false
       };
 
-    case GET_PROFILES:
+    case GET_BOOKS:
       return {
         ...state,
         profiles: action.payload,

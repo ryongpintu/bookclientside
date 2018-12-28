@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup.js";
-// import TextAreaFieldGroup from "../common/TextAreaFieldGroup.js";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCurrentBook, updateBook } from "../../actions/profileActions.js";
@@ -81,7 +80,6 @@ class EditBook extends Component {
               <p className="lead text-center">
                 Edit This book that you have read in the past or current
               </p>
-              <small className="d-block pb-3">* = required fields</small>
 
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -131,12 +129,12 @@ class EditBook extends Component {
 }
 
 EditBook.propTyes = {
-  addExperience: PropTypes.func.isRequired
+  updateBook: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   errors: state.errors,
-  profile: state.profile
+  profile: state.book
 });
 
 export default connect(

@@ -2,25 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getProfiles, deleteAccount } from "../../actions/profileActions.js";
+import { getBooks } from "../../actions/profileActions.js";
 import Spinner from "../common/Spinner.js";
-// import ProfileActions from "./ProfileActions.js";
-// import Experience from "./Experience.js";
+
 import BookList from "./BookList.js";
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getProfiles();
-  }
-
-  onDeleteClick(e) {
-    this.props.deleteAccount();
+    this.props.getBooks();
   }
 
   render() {
     const { user } = this.props.auth;
     const { profiles, loading } = this.props.profile;
-    console.log(profiles);
+    //console.log(profiles);
     let dashboardContent;
 
     if (profiles === null || loading) {
@@ -55,18 +50,17 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  getProfiles: PropTypes.func.isRequired,
-  deleteAccount: PropTypes.func.isRequired,
+  getBooks: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile,
+  profile: state.book,
   auth: state.auth
 });
 
 export default connect(
   mapStateToProps,
-  { getProfiles, deleteAccount }
+  { getBooks }
 )(Dashboard);

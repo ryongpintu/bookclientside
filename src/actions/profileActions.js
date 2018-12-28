@@ -1,8 +1,8 @@
 import axios from "axios";
 import {
-  GET_PROFILE,
-  GET_PROFILES,
-  PROFILE_LOADING,
+  GET_BOOK,
+  GET_BOOKS,
+  BOOK_LOADING,
   CLEAR_CURRENT_PROFILE,
   GET_ERRORS,
   SET_CURRENT_USER
@@ -14,44 +14,14 @@ export const getCurrentProfile = () => dispatch => {
     .get("http://localhost:8000/books")
     .then(res =>
       dispatch({
-        type: GET_PROFILE,
+        type: GET_BOOK,
         payload: res.data
       })
     )
     .catch(err =>
       dispatch({
-        type: GET_PROFILE,
+        type: GET_BOOK,
         payload: {}
-      })
-    );
-};
-
-export const getProfileByHandle = handle => dispatch => {
-  dispatch(setProfileLoading());
-  axios
-    .get(`http://localhost:3000/api/profile/handle/${handle}`)
-    .then(res =>
-      dispatch({
-        type: GET_PROFILE,
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_PROFILE,
-        payload: null
-      })
-    );
-};
-
-export const createProfile = (profileData, history) => dispatch => {
-  axios
-    .post("http://localhost:3000/api/profile", profileData)
-    .then(res => history.push("/dashboard"))
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
       })
     );
 };
@@ -74,7 +44,7 @@ export const getCurrentBook = id => dispatch => {
     .then(res => {
       console.log(res.data);
       dispatch({
-        type: GET_PROFILE,
+        type: GET_BOOK,
         payload: res.data
       });
     })
@@ -86,7 +56,7 @@ export const getCurrentBook = id => dispatch => {
     );
 };
 
-export const addExperience = (expData, history) => dispatch => {
+export const addBook = (expData, history) => dispatch => {
   axios
     .post("http://localhost:8000/books/add", expData)
     .then(res => history.push("/dashboard"))
@@ -98,53 +68,24 @@ export const addExperience = (expData, history) => dispatch => {
     );
 };
 
-export const addEducation = (eduData, history) => dispatch => {
-  axios
-    .post("http://localhost:3000/api/profile/education", eduData)
-    .then(res => history.push("/dashboard"))
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
-export const deleteExperience = id => dispatch => {
+export const deleteBook = id => dispatch => {
   axios
     .delete(`http://localhost:8000/books/delete/${id}`)
     .then(res =>
       dispatch({
-        type: GET_PROFILES,
+        type: GET_BOOK,
         payload: res.data
       })
     )
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response
+        payload: {}
       })
     );
 };
 
-export const deleteEducation = id => dispatch => {
-  axios
-    .delete(`http://localhost:3000/api/profile/education/${id}`)
-    .then(res =>
-      dispatch({
-        type: GET_PROFILE,
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
-export const getProfiles = () => dispatch => {
+export const getBooks = () => dispatch => {
   dispatch(setProfileLoading());
 
   axios
@@ -152,45 +93,22 @@ export const getProfiles = () => dispatch => {
     .then(res => {
       console.log(res.data);
       dispatch({
-        type: GET_PROFILES,
+        type: GET_BOOKS,
         payload: res.data
       });
     })
     .catch(err => {
       console.log(err);
       dispatch({
-        type: GET_PROFILES,
+        type: GET_ERRORS,
         payload: null
       });
     });
 };
 
-export const deleteAccount = () => dispatch => {
-  if (window.confirm("Are you sure? This can Not be Undone!")) {
-    axios
-      .delete("http://localhost:3000/api/profile")
-      .then(res =>
-        dispatch({
-          type: SET_CURRENT_USER,
-          payload: {}
-        })
-      )
-      .catch(err =>
-        dispatch({
-          type: GET_ERRORS,
-          payload: err.response.data
-        })
-      );
-  }
-
-  return {
-    type: PROFILE_LOADING
-  };
-};
-
 export const setProfileLoading = () => {
   return {
-    type: PROFILE_LOADING
+    type: BOOK_LOADING
   };
 };
 
