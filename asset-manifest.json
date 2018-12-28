@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.aed6b149.chunk.css",
-  "main.js": "/static/js/main.2c15bfa2.chunk.js",
-  "main.js.map": "/static/js/main.2c15bfa2.chunk.js.map",
-  "static/js/1.9795d1cf.chunk.js": "/static/js/1.9795d1cf.chunk.js",
-  "static/js/1.9795d1cf.chunk.js.map": "/static/js/1.9795d1cf.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/App.css": "/static/media/showcase.4b31330b.jpg",
-  "static/css/main.aed6b149.chunk.css.map": "/static/css/main.aed6b149.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.90721a7b507c88ae1353a537fbd15922.js": "/precache-manifest.90721a7b507c88ae1353a537fbd15922.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/TD-React-Challenge-Test-1/static/css/main.b4f55096.chunk.css",
+  "main.js": "/TD-React-Challenge-Test-1/static/js/main.5f29f510.chunk.js",
+  "main.js.map": "/TD-React-Challenge-Test-1/static/js/main.5f29f510.chunk.js.map",
+  "static/js/1.9795d1cf.chunk.js": "/TD-React-Challenge-Test-1/static/js/1.9795d1cf.chunk.js",
+  "static/js/1.9795d1cf.chunk.js.map": "/TD-React-Challenge-Test-1/static/js/1.9795d1cf.chunk.js.map",
+  "runtime~main.js": "/TD-React-Challenge-Test-1/static/js/runtime~main.0d868d1c.js",
+  "runtime~main.js.map": "/TD-React-Challenge-Test-1/static/js/runtime~main.0d868d1c.js.map",
+  "static/media/App.css": "/TD-React-Challenge-Test-1/static/media/showcase.4b31330b.jpg",
+  "static/css/main.b4f55096.chunk.css.map": "/TD-React-Challenge-Test-1/static/css/main.b4f55096.chunk.css.map",
+  "index.html": "/TD-React-Challenge-Test-1/index.html",
+  "precache-manifest.c56f85af92b60ca6df39249edcb9366a.js": "/TD-React-Challenge-Test-1/precache-manifest.c56f85af92b60ca6df39249edcb9366a.js",
+  "service-worker.js": "/TD-React-Challenge-Test-1/service-worker.js"
 }
