@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/TD-React-Challenge-Test-1/precache-manifest.c56f85af92b60ca6df39249edcb9366a.js"
+  "/ryongpintu.github.io/bookclientside/precache-manifest.ffaf5a9b74e3121832fc9c0b72c18fdd.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/TD-React-Challenge-Test-1/index.html", {
+workbox.routing.registerNavigationRoute("/ryongpintu.github.io/bookclientside/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

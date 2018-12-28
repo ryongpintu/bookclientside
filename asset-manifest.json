@@ -1,14 +1,14 @@
 {
-  "main.css": "/TD-React-Challenge-Test-1/static/css/main.b4f55096.chunk.css",
-  "main.js": "/TD-React-Challenge-Test-1/static/js/main.5f29f510.chunk.js",
-  "main.js.map": "/TD-React-Challenge-Test-1/static/js/main.5f29f510.chunk.js.map",
-  "static/js/1.9795d1cf.chunk.js": "/TD-React-Challenge-Test-1/static/js/1.9795d1cf.chunk.js",
-  "static/js/1.9795d1cf.chunk.js.map": "/TD-React-Challenge-Test-1/static/js/1.9795d1cf.chunk.js.map",
-  "runtime~main.js": "/TD-React-Challenge-Test-1/static/js/runtime~main.0d868d1c.js",
-  "runtime~main.js.map": "/TD-React-Challenge-Test-1/static/js/runtime~main.0d868d1c.js.map",
-  "static/media/App.css": "/TD-React-Challenge-Test-1/static/media/showcase.4b31330b.jpg",
-  "static/css/main.b4f55096.chunk.css.map": "/TD-React-Challenge-Test-1/static/css/main.b4f55096.chunk.css.map",
-  "index.html": "/TD-React-Challenge-Test-1/index.html",
-  "precache-manifest.c56f85af92b60ca6df39249edcb9366a.js": "/TD-React-Challenge-Test-1/precache-manifest.c56f85af92b60ca6df39249edcb9366a.js",
-  "service-worker.js": "/TD-React-Challenge-Test-1/service-worker.js"
+  "main.css": "/ryongpintu.github.io/bookclientside/static/css/main.06ebd611.chunk.css",
+  "main.js": "/ryongpintu.github.io/bookclientside/static/js/main.2968b56a.chunk.js",
+  "main.js.map": "/ryongpintu.github.io/bookclientside/static/js/main.2968b56a.chunk.js.map",
+  "static/js/1.9795d1cf.chunk.js": "/ryongpintu.github.io/bookclientside/static/js/1.9795d1cf.chunk.js",
+  "static/js/1.9795d1cf.chunk.js.map": "/ryongpintu.github.io/bookclientside/static/js/1.9795d1cf.chunk.js.map",
+  "runtime~main.js": "/ryongpintu.github.io/bookclientside/static/js/runtime~main.042042c2.js",
+  "runtime~main.js.map": "/ryongpintu.github.io/bookclientside/static/js/runtime~main.042042c2.js.map",
+  "static/media/App.css": "/ryongpintu.github.io/bookclientside/static/media/showcase.4b31330b.jpg",
+  "static/css/main.06ebd611.chunk.css.map": "/ryongpintu.github.io/bookclientside/static/css/main.06ebd611.chunk.css.map",
+  "index.html": "/ryongpintu.github.io/bookclientside/index.html",
+  "precache-manifest.ffaf5a9b74e3121832fc9c0b72c18fdd.js": "/ryongpintu.github.io/bookclientside/precache-manifest.ffaf5a9b74e3121832fc9c0b72c18fdd.js",
+  "service-worker.js": "/ryongpintu.github.io/bookclientside/service-worker.js"
 }
