@@ -66,7 +66,7 @@ class AddBook extends Component {
                   name="name"
                   value={this.state.name}
                   onChange={this.onChange}
-                  error={errors.name}
+                  error={errors}
                 />
 
                 <TextFieldGroup

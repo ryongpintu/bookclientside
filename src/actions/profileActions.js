@@ -18,12 +18,14 @@ export const getCurrentProfile = () => dispatch => {
         payload: res.data
       })
     )
-    .catch(err =>
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
-        type: GET_BOOK,
-        payload: {}
-      })
-    );
+        type: GET_ERRORS,
+        payload: error
+      });
+    });
 };
 
 export const updateBook = (id, profileData, history) => dispatch => {
@@ -31,12 +33,14 @@ export const updateBook = (id, profileData, history) => dispatch => {
   axios
     .put(`https://bookishappapi.herokuapp.com/books/edit/${id}`, profileData)
     .then(res => history.push("/dashboard"))
-    .catch(err =>
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: error
+      });
+    });
 };
 export const getCurrentBook = id => dispatch => {
   axios
@@ -48,24 +52,28 @@ export const getCurrentBook = id => dispatch => {
         payload: res.data
       });
     })
-    .catch(err =>
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: error
+      });
+    });
 };
 
 export const addBook = (expData, history) => dispatch => {
   axios
     .post("https://bookishappapi.herokuapp.com/books/add", expData)
     .then(res => history.push("/dashboard"))
-    .catch(err =>
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: {}
-      })
-    );
+        payload: error
+      });
+    });
 };
 
 export const deleteBook = id => dispatch => {
@@ -77,12 +85,14 @@ export const deleteBook = id => dispatch => {
         payload: res.data
       })
     )
-    .catch(err =>
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: {}
-      })
-    );
+        payload: error
+      });
+    });
 };
 
 export const getBooks = () => dispatch => {
@@ -97,11 +107,12 @@ export const getBooks = () => dispatch => {
         payload: res.data
       });
     })
-    .catch(err => {
-      console.log(err);
+    .catch(err =>{
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: null
+        payload: error
       });
     });
 };

@@ -7,14 +7,15 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 export const registerUser = (userData, history) => dispatch => {
   axios
-    .post("http://localhost:8000/users/register", userData)
+    .post("https://bookishappapi.herokuapp.com/users/register", userData)
     .then(res => history.push("/login"))
     .catch(err => {
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: error
       });
-      console.log(err.response.data);
     });
 
   //We cannot do this  this is meant to do in component
@@ -31,7 +32,7 @@ export const registerUser = (userData, history) => dispatch => {
 
 export const loginUser = userData => dispatch => {
   axios
-    .post("http://localhost:8000/auth", userData)
+    .post("https://bookishappapi.herokuapp.com/auth", userData)
     .then(res => {
       console.log(res);
       const { token } = res.data;
@@ -46,10 +47,11 @@ export const loginUser = userData => dispatch => {
       dispatch(setCurrentUser(decoded));
     })
     .catch(err => {
-      console.log(err);
+      
+      const error= err?err.response.data:null;
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: error
       });
     });
 };
