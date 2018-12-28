@@ -6,15 +6,11 @@ import { getProfiles, deleteAccount } from "../../actions/profileActions.js";
 import Spinner from "../common/Spinner.js";
 // import ProfileActions from "./ProfileActions.js";
 // import Experience from "./Experience.js";
-import BookList from "./BookList.js";
+import BookItem from "./BookItem";
 
-class Dashboard extends Component {
+class ShowBooks extends Component {
   componentDidMount() {
     this.props.getProfiles();
-  }
-
-  onDeleteClick(e) {
-    this.props.deleteAccount();
   }
 
   render() {
@@ -32,9 +28,14 @@ class Dashboard extends Component {
         const book = profiles.map(book => book.name);
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <BookList books={profiles} />
+            <BookItem books={profiles} />
           </div>
+        );
+      } else {
+        dashboardContent = (
+          <h4>
+            Sorry, No Book Listed : <Link to={"/add-book"}>Add Book</Link>
+          </h4>
         );
       }
     }
@@ -44,7 +45,7 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="display-4">Book List</h1>
               {dashboardContent}
             </div>
           </div>
@@ -54,9 +55,8 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+ShowBooks.propTypes = {
   getProfiles: PropTypes.func.isRequired,
-  deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -68,5 +68,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProfiles, deleteAccount }
-)(Dashboard);
+  { getProfiles }
+)(ShowBooks);

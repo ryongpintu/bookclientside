@@ -11,7 +11,7 @@ import {
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get("http://localhost:8000/users/me")
+    .get("http://localhost:8000/books")
     .then(res =>
       dispatch({
         type: GET_PROFILE,
@@ -56,6 +56,36 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
+export const updateBook = (id, profileData, history) => dispatch => {
+  console.log(profileData);
+  axios
+    .put(`http://localhost:8000/books/edit/${id}`, profileData)
+    .then(res => history.push("/dashboard"))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+export const getCurrentBook = id => dispatch => {
+  axios
+    .get(`http://localhost:8000/books/${id}`)
+    .then(res => {
+      console.log(res.data);
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      });
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 export const addExperience = (expData, history) => dispatch => {
   axios
     .post("http://localhost:8000/books/add", expData)
@@ -63,7 +93,7 @@ export const addExperience = (expData, history) => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: {}
       })
     );
 };
@@ -82,17 +112,17 @@ export const addEducation = (eduData, history) => dispatch => {
 
 export const deleteExperience = id => dispatch => {
   axios
-    .delete(`http://localhost:3000/api/profile/experience/${id}`)
+    .delete(`http://localhost:8000/books/delete/${id}`)
     .then(res =>
       dispatch({
-        type: GET_PROFILE,
+        type: GET_PROFILES,
         payload: res.data
       })
     )
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: err.response
       })
     );
 };

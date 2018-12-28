@@ -18,6 +18,8 @@ import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import AddExperience from "./components/add-credentials/AddExperience";
 import Profiles from "./components/profiles/Profiles";
+import EditBook from "./components/edit-book/EditBook";
+import ShowBooks from "./components/bookhome/ShowBooks";
 
 // check for token
 if (localStorage.getItem("x-auth-token")) {
@@ -42,7 +44,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/files" component={Profiles} />
+              <Route exact path="/book-list" component={ShowBooks} />
 
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -50,8 +52,15 @@ class App extends Component {
               <Switch>
                 <PrivateRoute
                   exact
-                  path="/add-experience"
+                  path="/add-book"
                   component={AddExperience}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-book/:id"
+                  component={EditBook}
                 />
               </Switch>
             </div>

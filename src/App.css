@@ -2,6 +2,10 @@ img {
   width: 100%;
 }
 
+.btn-danger {
+  margin-left: 2px;
+}
+
 .invalid-feedback {
   display: block;
 }
